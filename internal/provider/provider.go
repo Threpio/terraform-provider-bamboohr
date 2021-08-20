@@ -25,12 +25,12 @@ type ServiceRegistration interface {
 func BambooHRProvider() *schema.Provider {
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
-			"subdomain": &schema.Schema{
+			"subdomain": {
 				Type:        schema.TypeString,
 				Optional:    true,
 				DefaultFunc: schema.EnvDefaultFunc("BAMBOOHR_SUBDOMAIN", nil),
 			},
-			"apiKey": &schema.Schema{
+			"apiKey": {
 				Type:        schema.TypeString,
 				Optional:    true,
 				DefaultFunc: schema.EnvDefaultFunc("API_KEY", nil),

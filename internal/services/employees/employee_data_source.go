@@ -15,68 +15,68 @@ func employeeDataSource() *schema.Resource {
 	return &schema.Resource{
 		ReadContext: employeeDataSourceRead,
 		Schema: map[string]*schema.Schema{
-			"id": &schema.Schema{
+			"id": {
 				Type:     schema.TypeInt,
 				Required: true,
 			},
-			"employee": &schema.Schema{
+			"employee": {
 				Type:     schema.TypeList,
 				Computed: true,
 				Elem: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"display_name": &schema.Schema{
+						"display_name": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"first_name": &schema.Schema{
+						"first_name": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"last_name": &schema.Schema{
+						"last_name": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"preferred_name": &schema.Schema{
+						"preferred_name": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"gender": &schema.Schema{
+						"gender": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"job_title": &schema.Schema{
+						"job_title": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"work_phone": &schema.Schema{
+						"work_phone": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"mobile_phone": &schema.Schema{
+						"mobile_phone": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"work_email": &schema.Schema{
+						"work_email": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"department": &schema.Schema{
+						"department": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"location": &schema.Schema{
+						"location": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"division": &schema.Schema{
+						"division": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"linkedIn": &schema.Schema{
+						"linkedIn": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
-						"work_phone_extension": &schema.Schema{
+						"work_phone_extension": {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
