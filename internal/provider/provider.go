@@ -47,7 +47,6 @@ func BambooHRProvider() *schema.Provider {
 func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics) {
 	apiKey := d.Get("API_KEY").(string)
 	subdomain := d.Get("subdomain").(string)
-	var diags diag.Diagnostics
 
 	if apiKey == "" {
 		err := errors.New("API_KEY is not set or empty.")
@@ -58,7 +57,7 @@ func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}
 		return nil, diag.FromErr(err)
 	}
 
-	return buildClient(subdomain, apiKey), diags
+	return buildClient(subdomain, apiKey)
 }
 
 //buildClient returns a client object for use with auth.
