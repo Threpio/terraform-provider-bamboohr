@@ -1,12 +1,12 @@
 package employees
 
 import (
-	"../../clients"
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/hashicorp/terraform-plugin-sdk/diag"
-	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/threpio/terraform-provider-bamboohr/internal/clients"
 	"net/http"
 	"strconv"
 )
