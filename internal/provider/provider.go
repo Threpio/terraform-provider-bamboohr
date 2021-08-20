@@ -1,12 +1,26 @@
 package provider
 
 import (
-	"github.com/threpio/terraform-provider-bamboohr/internal/clients"
 	"context"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/threpio/terraform-provider-bamboohr/internal/clients"
 	"gopkg.in/errgo.v2/errors"
 )
+
+type ServiceRegistration interface {
+	// Name is the name of this Service
+	Name() string
+
+	// WebsiteCategories returns a list of categories which can be used for the sidebar
+	WebsiteCategories() []string
+
+	// SupportedDataSources returns the supported Data Sources supported by this Service
+	SupportedDataSources() map[string]*schema.Resource
+
+	// SupportedResources returns the supported Resources supported by this Service
+	SupportedResources() map[string]*schema.Resource
+}
 
 func BambooHRProvider() *schema.Provider {
 	return &schema.Provider{
